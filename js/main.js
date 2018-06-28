@@ -67,17 +67,31 @@
 }());
 
 function showFuture() {
-	$.ajax(
-		{
-			type:"POST",
-			url:"https://storiwall.com/future",
-			dataType:"data",
-			success: function(msg) {
-				console.log("hello");
-			},
-			error:function(xhr,status,error) {
-				console.log(error)
-			}
-		}
-	);
+
+	$.get("http://127.0.0.1:8000/troll/getimage",
+    	{
+        	name: "aaaa",
+ 		gender: "male"
+    	},
+    	function(data, status){
+        	alert("Data: " + data + "\nStatus: " + status);
+    	});
+
+	//$.ajax(
+	//	{
+	//		type:"POST",
+	//		url:"http://127.0.0.1:8000/troll/getimage",
+	//		{
+        //			name: "Donald Duck",
+        //			gender: "male"
+    	//		},
+	//		success: function(msg) {
+	//			console.log("hello");
+          //                      console.log(msg)
+		//	},
+		//	error:function(xhr,status,error) {
+		//		console.log(error)
+		//	}
+	//	}
+//	);
 }
